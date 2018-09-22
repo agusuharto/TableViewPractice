@@ -12,7 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        var foodArray:Array<String> = []
+        foodArray.append("ramen")
+        print(foodArray)
+        foodArray.append("sushi")
+        print(foodArray)
+        print(foodArray[0])
+        foodArray.append("anman")
+        foodArray.append("udon")
+        foodArray.append("dorayaki")
+        foodArray.append("tenpura")
+        print(foodArray[2])
+        print(foodArray[0])
+        print(foodArray[3])
+        print(foodArray.count)
     }
 
     override func didReceiveMemoryWarning() {
