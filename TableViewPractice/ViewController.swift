@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTableView.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
         
         //テーブルビューの設置
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        myTableView.register(MyTableViewCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(myTableView)
     }
 
@@ -58,9 +58,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: テーブルビューのセルの中身を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //myItems配列の中身をテキストにして登録した
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell:MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! MyTableViewCell
         cell.textLabel?.text = self.foodArray[indexPath.row]
-        cell.backgroundColor = UIColor.red
         cell.textLabel?.textColor = UIColor.yellow
         return cell
     }
