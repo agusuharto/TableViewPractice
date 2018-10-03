@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //デリゲートの設定
         myTableView.delegate = self
         myTableView.dataSource = self
-        
+    
         //テーブルビューの大きさの指定
         myTableView.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
         
@@ -60,6 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //myItems配列の中身をテキストにして登録した
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         cell.textLabel?.text = self.foodArray[indexPath.row]
+        cell.backgroundColor = UIColor.red
+        cell.textLabel?.textColor = UIColor.yellow
         return cell
     }
     
