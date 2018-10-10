@@ -60,7 +60,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //myItems配列の中身をテキストにして登録した
         let cell:MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! MyTableViewCell
         cell.textLabel?.text = self.foodArray[indexPath.row]
-        cell.textLabel?.textColor = UIColor.yellow
+        cell.myImage.image = UIImage (named: self.foodArray[indexPath.row])
+        if(indexPath.row == 0) {
+            cell.textLabel?.textColor = UIColor.yellow
+        }else if(indexPath.row == 1) {
+            cell.textLabel?.textColor = UIColor.red
+        }else {
+            cell.textLabel?.textColor = UIColor.blue
+        }
         return cell
     }
     
